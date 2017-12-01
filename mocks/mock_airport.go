@@ -5,7 +5,6 @@
 package mocks
 
 import (
-	airport "github.com/cgulli/airport_go/airport"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )
@@ -33,14 +32,14 @@ func (m *MockAirport) EXPECT() *MockAirportMockRecorder {
 	return m.recorder
 }
 
-// NewAirport mocks base method
-func (m *MockAirport) NewAirport() airport.Airport {
-	ret := m.ctrl.Call(m, "NewAirport")
-	ret0, _ := ret[0].(airport.Airport)
+// CanLand mocks base method
+func (m *MockAirport) CanLand() bool {
+	ret := m.ctrl.Call(m, "CanLand")
+	ret0, _ := ret[0].(bool)
 	return ret0
 }
 
-// NewAirport indicates an expected call of NewAirport
-func (mr *MockAirportMockRecorder) NewAirport() *gomock.Call {
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewAirport", reflect.TypeOf((*MockAirport)(nil).NewAirport))
+// CanLand indicates an expected call of CanLand
+func (mr *MockAirportMockRecorder) CanLand() *gomock.Call {
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CanLand", reflect.TypeOf((*MockAirport)(nil).CanLand))
 }
